@@ -1,0 +1,534 @@
+/* Menu */
+
+.menu-wrapper {
+    height: 25px;
+    background-color: #F46060;
+    border-bottom: 1px solid #d85757;
+}
+
+#top-navigation ul,
+#top-navigation ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-wrapper #top-navigation ul {
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+#top-navigation ul li {
+    float: left;
+}
+
+.menu-wrapper #top-navigation ul li {
+    margin-right: 20px;
+}
+
+.menu-wrapper #top-navigation ul li a {
+    color: #fff;
+    text-shadow: none;
+}
+
+.menu-wrapper #top-navigation ul li a,
+header #top-navigation ul li a {
+    font-size: 14px;
+}
+
+header #top-navigation {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 13px;
+}
+
+header #top-navigation,
+header #top-navigation ul,
+header #top-navigation ul li {
+    height: 18px;
+    line-height: 18px;
+}
+
+header #top-navigation ul li {
+    padding: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.menu-wrapper #top-navigation ul li.separator {
+    display: none;
+}
+
+header #top-navigation ul li.separator {
+    padding: 0;
+}
+
+header #top-navigation ul li.active {
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+/* Search box */
+
+#search-box {
+    position: fixed;
+    
+    top: 50%;
+    left: 15px;
+    right: 15px;
+    height: 120px;
+    margin-top: -130px; 
+}
+
+#search-box #logo
+{
+    height: 70px;
+    line-height: 70px;
+    margin-bottom: 0px;
+    font-size: 60px;
+    text-align: center;
+}
+
+#search-box p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8F8F8F;
+}
+
+#search-box form,
+#search-box-mini form {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+
+#search-box .input-box-container,
+#search-box form input[type="text"] {
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+    max-width: 650px;
+    height: 34px;
+}
+
+#search-box .input-box-container {
+    overflow: hidden;
+    padding: 5px;
+}
+
+#search-box-mini {
+    padding-left: 15px;
+    padding-top: 7px;
+}
+
+#search-box-mini .input-box-container,
+#search-box-mini form input[type="text"] 
+{
+    width: 555px;
+    height: 34px;
+}
+
+#search-box form input[type="text"],
+#search-box-mini form input[type="text"] {
+    display: block;
+    height: 34px;
+    
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#search-box form input[type="text"] {
+    margin: 0px auto;
+}
+
+#search-box-mini form input[type="text"] {
+    width: 540px;
+}
+
+#search-box form input.button {
+    display: block;
+    margin: 0px auto;
+    margin-top: 15px;
+}
+
+#search-box .input-box-container,
+#search-box-mini .input-box-container {
+    position: relative;
+}
+
+#search-box .input-box-container a,
+#search-box-mini .input-box-container a {
+    font-size: 14px;
+    position: absolute;
+    text-transform: lowercase;
+    right: 6px;
+    top: 6px;
+    display: block;
+    padding: 0;
+    padding-right: 6px;
+    padding-left: 6px;
+    height: 32px;
+    line-height: 30px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+#search-box-mini .input-box-container a {
+    right: 16px;
+    top: 1px;
+}
+
+#search-box-mini form,
+#search-box-mini form .input-box-container,
+#search-box-mini form input[type="submit"] {
+    float: left;
+}
+
+#search-box-mini form input[type="submit"] {
+    font-size: 15px;
+    margin-left: -10px;
+    height: 34px;
+    width: 120px;
+    padding: 0px;
+}
+
+/* End: Search box */
+
+/* Grade selector */
+
+ul.grade-selector {
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+}
+
+ul.grade-selector li {
+    float: left;
+}
+
+ul.grade-selector li.separator,
+#top-navigation ul li.separator {
+    width: 1px;
+    height: 14px;
+    margin-top: 5px;
+    margin-left: 7px;
+    margin-right: 7px;
+    background-color: #ccc;
+    border-right: 1px solid #fff;
+}
+
+ul.grade-selector li a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+ul.grade-selector li a.tag {
+    background-color: #fff;
+}
+
+/* End: Grade selector */
+
+/* Details */
+
+.details h1 {
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    text-transform: none;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.details .main,
+.details .side {
+    float: left;
+}
+
+.details .main {
+    width: 615px;
+    margin-right: 15px;
+}
+
+.details .side {
+    width: 300px;
+}
+
+.details .side .group {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #F7F7F7;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.details .side section {
+    margin-bottom: 20px;
+}
+
+.details .side section.clear {
+    display: block;
+}
+
+.details .side section:last-child {
+    margin-bottom: 0px;
+}
+
+.details .side section h4 {
+    margin-bottom: 8px;
+}
+
+.details .side section span {
+    float: left;
+    margin-bottom: 2px;
+}
+
+.details .side section img {
+    width: 278px;
+    border: 1px solid #dfdfdf;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.details .side div.narrow {
+    display: none;
+}
+
+.details .routes table,
+.details .sectors table {
+    table-layout: fixed;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+.details .routes table tr td,
+.details .sectors table tr td {
+    padding: 2px;
+}
+
+.details .routes table tr td .inner,
+.details .sectors table tr td .inner {
+    position: relative;
+}
+
+.details .routes table tr.route-with-description td,
+.details .sectors table tr.sector-with-description td {
+    padding-bottom: 1px !important;
+}
+
+.details .routes table tr.route-break td,
+.details .sectors table tr.sector-break td {
+    padding-bottom: 15px;
+}
+
+.details .routes table tr.route-description td p,
+.details .sectors table tr.sector-description td p {
+    margin-bottom: 0;
+    color: #979797;
+}
+
+table.plain tr td.order {
+    width: 28px;
+    font-size: 14px;
+}
+
+.details .routes table tr td.route-name,
+.details .sectors table tr td.sector-name {
+    width: 550px;
+}
+
+.details .routes table tr td.route-grade {
+    width: 50px;
+    text-align: right;
+}
+
+.details .sectors table tr td.sector-difficulty {
+    width: 100px;
+    text-align: right;
+    position: relative;
+}
+
+.details .sectors table tr td.sector-difficulty div.route-difficulty-chart {
+    position: absolute;
+    top: 2px;
+    right: 1px;
+}
+
+.details .routes table tr td.route-summary,
+.details .sectors table tr td.sector-summary {
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+    text-align: right;
+}
+
+.details .routes table tr td.route-summary .tag,
+.details .sectors table tr td.sector-summary .tag {
+    margin-left: 7px;
+}
+
+.details .feedback-form textarea {
+    width: 268px;
+    height: 100px;
+}
+
+.details .feedback-form input[type="submit"] {
+    font-size: 15px;
+    height: 36px;
+    width: 128px;
+    padding: 0;
+}
+
+/* End: Details */
+
+/* Search results */
+
+section.search-results {
+    width: 665px;
+    margin-top: 15px;
+    margin-left: 131px;
+    position: relative;
+}
+
+section.search-results h2 {
+    margin-bottom: 15px;
+}
+
+section.search-results .search-hint {
+    margin-bottom: 20px;
+}
+
+section.search-results .search-resultscount {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+section.search-results .search-results-empty {
+    margin-top: 100px;
+    text-align: center;
+}
+
+ul.search-results-list {
+    margin-bottom: 15px;
+}
+
+ul.search-results-list li {
+    display: block;
+    margin-bottom: 6px;
+}
+
+ul.search-results-list li.no-excerpt {
+    margin-bottom: 12px;
+}
+
+ul.search-results-list li .search-result-order,
+ul.search-results-list li .search-result-outer {
+    float: left;
+}
+
+ul.search-results-list li .search-result-order {
+    width: 28px;
+    padding-left: 2px;
+    padding-top: 3px;
+}
+
+ul.search-results-list li .search-result-outer {
+    width: 633px;
+    margin-bottom: 10px;
+}
+
+ul.search-results-list li .search-result-outer a {
+    font-size: 20px;
+}
+
+ul.search-results-list li .search-result-outer p {
+    margin-top: 4px;
+    color: #979797;
+}
+
+ul.search-results-paging {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+ul.search-results-paging li {
+    float: left;
+    margin-right: 10px;
+}
+
+/* End: Search results */
+
+/* About page */
+
+.about ul {
+    margin-left: 0;
+    list-style: none;
+}
+
+.about ul li {
+    margin-bottom: 0px;
+}
+
+/* End: About page */
+
+/* About search page */
+
+.about-search table.plain {
+    margin-top: 15px;
+}
+
+ul.search-parameters,
+ul.search-parameters li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.search-parameters,
+p.search-parameters-description {
+    display: none;
+}
+
+ul.search-parameters {
+    margin-left: 25px;
+}
+
+table.search-parameters tr td {
+    line-height: 28px;
+}
+
+/* End: About search page */
+
+/* Discover */
+
+.discover .outer {
+    max-width: 665px;
+    position: relative;
+}
+
+.discover .outer #total-routes {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.discover section {
+    padding-top: 40px;
+}
+
+.discover section ul li {
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+/* End: Discover */
+

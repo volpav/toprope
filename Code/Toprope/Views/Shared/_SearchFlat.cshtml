@@ -1,0 +1,33 @@
+﻿@model Toprope.Models.Search.SearchResultContainer
+@{
+    int offset = (ViewContext.Controller as Toprope.Controllers.HomeController).Skip;
+}
+
+<h2>@(!string.IsNullOrEmpty(Model.Title) ? Model.Title : Toprope.Resources.Frontend.SearchResults) (@Toprope.Infrastructure.Utilities.Input.FormatNumber(Model.Total))</h2>
+
+<ul class="search-results-list">
+@for (int i = 0; i < Model.Results.Count; i++)
+{
+    <li class="clear@(string.IsNullOrEmpty(Model.Results[i].Excerpt) ? " no-excerpt" : null)">
+        <label class="search-result-order">@(Toprope.Infrastructure.Utilities.Input.FormatNumber(i + offset + 1)).</label>
+        <div class="search-result-outer">
+            @{Html.RenderPartial("_SearchItem", Model.Results[i]);}
+        </div>
+    </li>
+}
+</ul>
+
+@if (offset - Model.PageSize >= 0 || offset + Model.PageSize < Model.Total)
+{
+<ul class="search-results-paging clear">
+    @if (offset - Model.PageSize >= 0)
+    {
+        <li><a class="tag" href="@Url.Action("Index", "Home", new { q = Model.Query.ToString(), skip = offset - Model.PageSize == 0 ? null : (offset - Model.PageSize).ToString() })">&larr;&nbsp;@Toprope.Resources.Frontend.PreviousPage</a></li>
+    }
+    
+    @if (offset + Model.PageSize < Model.Total)
+    {
+        <li><a class="tag" href="@Url.Action("Index", "Home", new { q = Model.Query.ToString(), skip = (offset + Model.PageSize).ToString() })">@Toprope.Resources.Frontend.NextPage&nbsp;&rarr;</a></li>
+    }
+</ul>
+}

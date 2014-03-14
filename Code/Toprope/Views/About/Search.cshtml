@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = Toprope.Resources.Frontend.AboutSearch;
+
+    List<Tuple<string, string>> parameters = new List<Tuple<string, string>>()
+    {
+        new Tuple<string, string>(string.Format("in:[{0}]", Toprope.Resources.Frontend.Type.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_In),
+        new Tuple<string, string>(string.Format("name:[{0}]", Toprope.Resources.Frontend.Term.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Name),
+        new Tuple<string, string>(string.Format("description:[{0}]", Toprope.Resources.Frontend.Term.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Description),
+        new Tuple<string, string>(string.Format("tags:[{0}]", Toprope.Resources.Frontend.Term.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Tags),
+        new Tuple<string, string>(string.Format("grade:[{0}]", Toprope.Resources.Frontend.Grade.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Grade),
+        new Tuple<string, string>(string.Format("area:[{0}]", Toprope.Resources.Frontend.Term.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Area),
+        new Tuple<string, string>(string.Format("sector:[{0}]", Toprope.Resources.Frontend.Term.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Sector),
+        new Tuple<string, string>(string.Format("route:[{0}]", Toprope.Resources.Frontend.Term.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Route),
+        new Tuple<string, string>(string.Format("season:[{0}]", Toprope.Resources.Frontend.Season.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Season),
+        new Tuple<string, string>(string.Format("climbing:[{0}]", Toprope.Resources.Frontend.Type.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Climbing),
+        new Tuple<string, string>(string.Format("location:[{0}]", Toprope.Resources.Frontend.Coordinates.ToLowerInvariant()), Toprope.Resources.Frontend.Parameter_Location)
+    };
+}
+
+<div id="content" class="about-search">
+    <article>
+        <h1>@Toprope.Resources.Frontend.AboutSearch</h1>
+        <p>@Html.Raw(Toprope.Resources.Frontend.AboutSearch_Body)</p>
+        <p>@Html.Raw(string.Format(Toprope.Resources.Frontend.RouteDirectory_Description, Url.Action("Index", "Discover")))</p>
+        <h2>@Toprope.Resources.Frontend.AvailableParameters</h2>
+
+        <table class="plain search-parameters">
+        @for(int index = 0; index < parameters.Count; index++)
+        {
+            <tr>
+                <td class="fill"><span class="code">@parameters[index].Item1</span></td>
+                <td>@Html.Raw(parameters[index].Item2)</td>
+            </tr>
+        }
+        </table>
+
+        <p class="search-parameters-description">@Toprope.Resources.Frontend.AvailableParameters_Description</p>
+        <ul class="search-parameters">
+            @for (int index = 0; index < parameters.Count; index++)
+            {
+                <li>
+                    <span class="code">@parameters[index].Item1</span>
+                    <p>@Html.Raw(parameters[index].Item2)</p>
+                </li>
+            }
+        </ul>
+
+        <h2>@Toprope.Resources.Frontend.Casing</h2>
+        <p>@Html.Raw(Toprope.Resources.Frontend.AdvancedStuff_Body)</p>
+        <h2>@Toprope.Resources.Frontend.WordsAndPhrases</h2>
+        <p>@Html.Raw(Toprope.Resources.Frontend.AdvancedStuff_Body2)</p>
+        <h2>@Toprope.Resources.Frontend.Lists</h2>
+        <p>@Html.Raw(Toprope.Resources.Frontend.AdvancedStuff_Body3)</p>
+        <h2>@Toprope.Resources.Frontend.Ranges</h2>
+        <p>@Html.Raw(Toprope.Resources.Frontend.AdvancedStuff_Body4)</p>
+    </article>
+</div>

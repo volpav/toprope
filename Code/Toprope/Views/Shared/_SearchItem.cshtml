@@ -1,0 +1,9 @@
+﻿@model Toprope.Models.Search.SearchResultBase
+
+<div class="search-result">
+    <a href="@Model.Url(Url)">@Model.Name</a>
+    @if (!string.IsNullOrEmpty(Model.Excerpt))
+    {
+        <p>@Html.Raw(Model.Excerpt)</p>
+    }
+</div>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html manifest="@(ViewBag.DisableCaching != null ? null : "/Content/Misc/cache.manifest")">
+    <head>
+        @{Html.RenderPartial("_Header");}
+		
+        @RenderSection("header", required: false)
+    </head>
+
+    <body>
+        <div id="line"></div>
+
+        <div class="menu-wrapper">
+            @{Html.RenderPartial("_Menu");}
+        </div>
+
+        <div id="wrapper">
+            @RenderBody()
+        </div>
+
+        @{Html.RenderPartial("_GoogleAnalytics");}
+    </body>
+</html>

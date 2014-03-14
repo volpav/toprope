@@ -1,0 +1,23 @@
+﻿@model Toprope.Models.Feedback.FeedbackModel
+@using Toprope.Infrastructure;
+
+<div class="feedback-form">
+    @if (Toprope.Infrastructure.Utilities.Input.GetInt(Request.QueryString["feedback"]) == 1)
+    {
+        <p>@Toprope.Resources.Frontend.YourFeedbackHasBeenSent</p>
+    }
+    else
+    {
+    <form action="@Url.Current(new { feedback = 1 })" method="post">
+        @if (Model != null)
+        {
+            <input type="hidden" name="feedback-subject" value="@Html.AttributeEncode(Model.Entry.Subject)" />
+        }
+
+        <textarea name="feedback-comment" autocomplete="off" spellcheck="false"
+            placeholder="@Toprope.Resources.Frontend.YourMessage">@(Model != null ? Model.Entry.Comment : string.Empty)</textarea>
+
+        <input type="submit" class="clear button button-red" value="@Toprope.Resources.Frontend.SendMessage" />
+    </form>
+    }
+</div>

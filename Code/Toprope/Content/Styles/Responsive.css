@@ -1,0 +1,292 @@
+﻿@media all and (max-width: 1300px) {
+    header #top-navigation {
+        width: auto;
+        float: left;
+        margin-left: 30px;
+        margin-top: 13px;
+        padding-top: 0;
+    }
+
+    body.main header #grades {
+        margin-top: 13px;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    body.search header #logo {
+        display: none;
+    }
+
+    section.search-results {
+        margin-left: 0px;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .details article {
+        padding-right: 300px;
+    }
+
+    .details .main, 
+    .details .side {
+        position: relative;
+    }
+
+    .details .main {
+        width: auto;
+    }
+
+    .details .side {
+        float: right;
+        margin-right: -300px;
+    }
+}
+
+@media all and (max-width: 880px) {
+    #search-box-mini form input[type="submit"] {
+        display: none;
+    }
+
+    body.search header #grades {
+        margin-right: 5px;
+    }
+}
+
+@media all and (max-width: 700px) {
+    body.search header #grades {
+        display: none;
+    }
+
+    body.search header #toolbar {
+        float: none;
+    }
+
+    #search-box-mini {
+        margin-right: 10px;
+    }
+
+    #search-box-mini form, 
+    #search-box-mini form .input-box-container, 
+    #search-box-mini form input[type="submit"] {
+        float: none;
+    }
+
+    #search-box-mini .input-box-container, 
+    #search-box-mini form input[type="text"] {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    #search-box-mini .input-box-container a {
+        right: 1px;
+    }
+
+    section.search-results {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 640px) {
+    .menu-wrapper #top-navigation ul li {
+        margin-right: 15px;
+    }
+
+    .menu-wrapper #top-navigation ul li a,
+    ul.grade-selector {
+        font-size: 12px;
+    }
+    
+    header #top-navigation {
+        display: none;
+    }
+
+    #content {
+        padding-top: 10px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    #wrapper {
+        padding-top: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #logo {
+        font-size: 22px;
+    }
+
+    body.main header {
+        height: 40px;
+        line-height: 35px;
+    }
+
+    body.main header #logo {
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+
+    body.main header #grades {
+        margin-right: 5px;
+        margin-top: 8px;
+    }
+
+    body.main header #grades .label {
+        display: none;
+    }
+
+    .tag, .hint, .code {
+        height: 16px;
+        line-height: 16px;
+    }
+
+    p .code {
+        padding: 0;
+        background-color: #fff;
+    }
+
+    h1 {
+        font-size: 24px;
+        height: auto;
+        font-weight: normal;
+        line-height: 34px;
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        font-size: 20px;
+        height: 26px;
+        line-height: 26px;
+        word-spacing: 4px;
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        height: 22px;
+        line-height: 22px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    h4 {
+        color: #979797;
+        word-spacing: 2px;
+    }
+
+    table.plain tr td {
+        padding: 5px;
+        padding-right: 5px;
+    }
+
+    #search-box p {
+        display: none;
+    }
+
+    #search-box #logo {
+        font-size: 46px;
+        margin-bottom: 10px;
+    }
+
+    #search-box form input[type="submit"] {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    #search-box-mini {
+        padding-top: 3px;
+        padding-left: 5px;
+        margin-right: 5px;
+    }
+
+    section.search-results .search-hint {
+        height: auto;
+    }
+
+    section.search-results .search-resultscount {
+        display: none;
+    }
+
+    ul.search-results-list li .search-result-order {
+        display: none;
+    }
+
+    ul.search-results-list li .search-result-outer {
+        float: none;
+        width: 100%;
+    }
+
+    .details h1 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    .details article {
+        padding-right: 0;
+    }
+
+    .details .main, .details .side {
+        float: none;
+    }
+
+    .details .main {
+        margin-right: 0;
+    }
+
+    .details .side {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .details .side .group {
+        margin-bottom: 0;
+    }
+
+    .details .feedback-form-outer {
+        height: 0px;
+        overflow: hidden;
+        margin-top: -20px;
+    }
+
+    .details .side section img {
+        width: 178px;
+    }
+
+    .details .feedback-form textarea {
+        width: 168px;
+    }
+
+    .details .side .wide {
+        display: none;
+    }
+
+    .details .side div.narrow {
+        display: block;
+    }
+
+    .details .side section h4 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .details .routes table tr td.route-summary, 
+    .details .sectors table tr td.sector-summary {
+        display: none;
+    }
+
+    ul.search-parameters,
+    p.search-parameters-description {
+        display: block;
+    }
+
+    table.search-parameters {
+        display: none;
+    }
+
+    ul.search-results-list li .search-result-outer a {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,20 @@
+﻿@functions {
+    string GetActiveNavigation(string controller, string action = "Index")
+    {
+        return string.Compare(Toprope.Infrastructure.Utilities.Input.GetString(ViewContext.RouteData.Values["controller"]), controller ?? string.Empty,
+            System.StringComparison.InvariantCultureIgnoreCase) == 0 && string.Compare(Toprope.Infrastructure.Utilities.Input.GetString(ViewContext.RouteData.Values["action"]), action ?? string.Empty,
+            System.StringComparison.InvariantCultureIgnoreCase) == 0 ? "active" : null;
+    }
+}
+
+<nav id="top-navigation">
+    <ul class="clear">
+        <li class="@GetActiveNavigation("Home")"><a href="@Url.Action("Index", "Home")">@Toprope.Resources.Frontend.Home</a></li>
+        <li class="separator"></li>
+        <li class="@GetActiveNavigation("Discover")"><a href="@Url.Action("Index", "Discover")">@Toprope.Resources.Frontend.Discover</a></li>
+        <li class="separator"></li>
+        <li class="@GetActiveNavigation("About", "Search")"><a href="@Url.Action("Search", "About")">@Toprope.Resources.Frontend.SearchTips</a></li>
+        <li class="separator"></li>
+        <li class="@GetActiveNavigation("About")"><a href="@Url.Action("Index", "About")">@Toprope.Resources.Frontend.About</a></li>
+    </ul>
+</nav>

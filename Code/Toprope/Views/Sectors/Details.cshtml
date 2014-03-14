@@ -1,0 +1,180 @@
+﻿@model Toprope.Models.SectorViewModel
+@using Toprope.Infrastructure;
+@using Toprope.Infrastructure.Search;
+
+@{
+    ViewBag.Title = string.Format("{0} ({1})", Model.Name, Model.Area.Name);
+    ViewBag.Description = Model.Description;
+
+    var relatedSectors = Toprope.Platform.Endpoint.SearchSectors(new SearchQuery(
+        new Criterion("area", Model.Area.Id.ToString()),
+        new Criterion("take", "4")));
+
+    if (relatedSectors == null || relatedSectors.Items == null || !relatedSectors.Items.Any(c => c.Id != Model.Id))
+    {
+        if (Model.Tags != null)
+        {
+            relatedSectors = Toprope.Platform.Endpoint.SearchSectors(new SearchQuery(
+                new Criterion("tags", string.Join(",", Model.Tags)),
+                new Criterion("take", "4")));
+        }
+    }
+}
+
+@functions {
+    System.Web.Mvc.MvcHtmlString Combine(IEnumerable<string> items)
+    {
+        string suffix = ",&nbsp;</span>";
+        string ret = string.Join(string.Empty, items.Select(i => string.Format("<span>{0}{1}", i, suffix)));
+        
+        if(ret.Length > 0)
+        {
+            ret = ret.Remove(ret.Length - suffix.Length, suffix.Length);
+            ret = string.Concat(ret, "</span>");
+        }
+
+        return new MvcHtmlString(ret);
+    }
+}
+
+<div id="content" class="details">
+    <h1>@Model.Name</h1>
+
+    <article>
+        <section class="main">
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+            <section>
+                @Toprope.Infrastructure.Utilities.RichText.Enable(Model.GetFullDescription())
+            </section>
+            }
+            @if (Model.Routes != null && Model.Routes.Any(r => r != null))
+            {
+            <section class="routes">
+                @if (!string.IsNullOrEmpty(Model.Description))
+                {
+                <h2>@Toprope.Resources.Frontend.Routes</h2>
+                }
+                <table>
+                    @foreach (var r in Model.Routes)
+                    {
+                        <tr class="@(string.IsNullOrEmpty(r.Description) ? "route-break" : "route-with-description")">
+                            <td class="route-name">
+                                @if (!string.IsNullOrEmpty(r.Name))
+                                {
+                                    @:<a title="@Toprope.Resources.Frontend.Permalink" name="route-@(r.Id.ToString())" href="@Url.Action("Details", "Sectors", new { id = Model.Id.ToString() })#route-@(r.Id.ToString())">@r.Name</a>
+                                }
+                                else
+                                {
+                                    @:&mdash;
+                                }
+                            </td>
+                        
+                            <td class="route-grade">
+                                @if (r.Grade != null)
+                                {
+                                    @Html.RenderRouteGrade(r, r.Grade);
+                                }
+                                else
+                                {
+                                    @:?
+                                }
+                            </td>
+                        </tr>
+                        
+                                if (!string.IsNullOrEmpty(r.Description))
+                                {
+                            <tr class="route-break route-description">
+                                <td colspan="2" class="route-description-text"><p>@r.Description</p></td>
+                            </tr>
+                                }
+                    }
+                    <tr>
+                        <td class="route-summary" colspan="3">
+                            <span class="tag">@(Model.Routes.Count)&nbsp;@Toprope.Resources.Frontend.Total</span><span class="tag">@(Model.Routes.Where(r => string.IsNullOrEmpty(r.Name)).Count())&nbsp;@Toprope.Resources.Frontend.Unnamed</span><span class="tag">@(Model.Routes.Where(r => r.Grade == null).Count())&nbsp;@Toprope.Resources.Frontend.Unrated</span>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            }
+        </section>
+        <section class="side">
+            <div class="group">
+                @if (Model.Images != null && Model.Images.Any())
+                {
+                <section class="clear">
+                    <a href="@Url.Content(Model.Images.First().Url)" target="_blank">
+                        <img src="@Url.Content(Model.Images.First().Url)" data-image-index="0" alt="" title="" />
+                    </a>
+                </section>
+                }
+                
+                @if (Model.Routes != null && Model.Routes.Any(r => r != null && r.Grade != null))
+                {
+                <section>
+                    <h4>@Toprope.Resources.Frontend.Difficulty</h4>
+                    <div class="wide">
+                        @Html.RenderDifficultyChart(Toprope.Models.Route.Categorize(Model.Routes), HtmlControlSize.Small)
+                    </div>
+                    <div class="narrow">
+                        @Html.RenderDifficultyChart(Toprope.Models.Route.Categorize(Model.Routes), HtmlControlSize.Tiny)
+                    </div>
+                </section>
+                }
+
+                <section class="clear">
+                    <h4>@(Toprope.Resources.Frontend.Area)</h4>
+                    <a href="@Url.Action("Details", "Areas", new { id = Model.Area.Id })">@Model.Area.Name</a>
+                </section>
+
+                @if (Model.Location != null || Model.Area.Location != null)
+                {
+                    var l = Model.Location != null ? Model.Location : Model.Area.Location;
+            
+                <section class="clear">
+                    <h4>@(Toprope.Resources.Frontend.GPS)</h4>
+                    <a href="https://maps.google.com?q=@(l.ToString())&z=14" target="_blank">@(l.ToString())</a>
+                </section>
+                }
+
+                @if (Model.Climbing != Toprope.Models.ClimbingTypes.NotSpecified || Model.Area.Climbing != Toprope.Models.ClimbingTypes.NotSpecified)
+                {
+                    <section class="clear">
+                        <h4>@Toprope.Resources.Frontend.Climbing</h4>
+                        @Combine(Toprope.Infrastructure.Utilities.Input.FormatFlags(Model.Climbing != Toprope.Models.ClimbingTypes.NotSpecified ? Model.Climbing : Model.Area.Climbing).Select(t => string.Format("<a href=\"{0}\">{1}</a>", Url.Action("Index", "Home", new { q = "climbing:" + t }), t)))
+                    </section>
+                }
+
+                @if (Model.Season != Toprope.Models.Seasons.NotSpecified || Model.Area.Season != Toprope.Models.Seasons.NotSpecified)
+                {
+                    <section class="clear">
+                        <h4>@Toprope.Resources.Frontend.Seasons</h4>
+                        @Combine(Toprope.Infrastructure.Utilities.Input.FormatFlags(Model.Season != Toprope.Models.Seasons.NotSpecified ? Model.Season : Model.Area.Season).Select(t => string.Format("<a href=\"{0}\">{1}</a>", Url.Action("Index", "Home", new { q = "season:" + t }), t)))
+                    </section>
+                }
+            
+                @if (Model.Tags != null && Model.Tags.Any())
+                {
+                <section class="clear">
+                    <h4>@(Toprope.Resources.Frontend.Tags)</h4>
+                    @Combine(Model.Tags.Select(t => string.Format("<a href=\"{0}\">{1}</a>", Url.Action("Index", "Home", new { q = "tags:" + t }), t)))
+                </section>
+                }
+            
+                @if (relatedSectors != null && relatedSectors.Items.Any(c => c.Id != Model.Id))
+                {
+                <section class="clear">
+                    <h4>@Toprope.Resources.Frontend.Related</h4>
+                    @Combine(relatedSectors.Items.Where(c => c.Id != Model.Id).Take(3).Select(i => string.Format("<a href=\"{0}\">{1}</a>",Url.Action("Details", "Sectors", new { id = i.Id.ToString() }), i.Name)))
+                </section>
+                }
+
+                <section class="feedback-form-outer clear">
+                    <h4>@Toprope.Resources.Frontend.Feedback</h4>
+                    @Html.Partial("_FeedbackForm", new Toprope.Models.Feedback.FeedbackModel() { Entry = Toprope.Models.Feedback.FeedbackEntry.Create(Model) })
+                </section>
+            </div>
+        </section>
+        <div class="clear"></div>
+    </article>
+</div>

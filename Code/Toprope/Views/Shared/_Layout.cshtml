@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html manifest="@(ViewBag.DisableCaching != null ? null : "/Content/Misc/cache.manifest")">
+     <head>
+        @{Html.RenderPartial("_Header");}
+        
+        @RenderSection("header", required: false)
+    </head>
+    
+    <body class="main@(ViewBag.BodyCss != null ? " " + ViewBag.BodyCss.ToString() : string.Empty)">
+        <div id="line"></div>
+        <header>
+            <div id="logo">
+                <a href="/">top<span>rope</span></a>
+            </div>
+
+            @if (ViewBag.HideMenu == null)
+            {
+                Html.RenderPartial("_Menu");
+            }
+
+            <div id="toolbar">
+                @RenderSection("toolbar", required: false)
+            </div>
+
+            <div id="grades">
+                @{Html.RenderPartial("_GradeSelector");}
+            </div>
+        </header>
+
+        <div id="wrapper">
+            @RenderBody()
+        </div>
+
+        @RenderSection("footer", required: false)
+
+        @{Html.RenderPartial("_GoogleAnalytics");}
+    </body>
+</html>

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = @Toprope.Resources.Frontend.About;
+}
+
+<div id="content" class="about">
+    <article>
+        <h1>@Toprope.Resources.Frontend.AboutToprope</h1>
+        <p>@Toprope.Resources.Frontend.AboutToprope_Body</p>
+        <h2>@Toprope.Resources.Frontend.WhyToprope</h2>
+        <p>@Toprope.Resources.Frontend.AboutToprope_Body2</p>
+        <ul>
+            <li>
+                <h4>@Toprope.Resources.Frontend.ContentFirst</h4>
+                <p>@Toprope.Resources.Frontend.ContentFirst_Body</p>
+            </li>
+            <li>
+                <h4>@Toprope.Resources.Frontend.PowerfulSearch</h4>
+                <p>@Html.Raw(string.Format(Toprope.Resources.Frontend.PowerfulSearch_Body, Url.Action("Search", "About")))</p>
+            </li>
+            <li>
+                <h4>@Toprope.Resources.Frontend.MobileFriendly</h4>
+                <p>@Html.Raw(Toprope.Resources.Frontend.MobileFriendly_Body)</p>
+            </li>
+            <li>
+                <h4>@Toprope.Resources.Frontend.OfflineSupport</h4>
+                <p>@Html.Raw(Toprope.Resources.Frontend.OfflineSupport_Body)</p>
+            </li>
+        </ul>
+        <h2>@Toprope.Resources.Frontend.AboutTheAuthor</h2>
+        <p>@Html.Raw(Toprope.Resources.Frontend.AboutToprope_Body3)</p>
+    </article>
+</div>

@@ -1,0 +1,30 @@
+﻿@using Toprope.Infrastructure;
+
+<title>@Html.Raw(ViewBag.Title != null && ViewBag.Title.ToString().Length > 0 ? string.Format("{0} - Toprope", ViewBag.Title) : Toprope.Resources.Frontend.WelcomeToToprope)</title>
+
+
+@if (ViewBag.Title != null)
+{
+<meta property="og:title" content="@ViewBag.Title" />
+}
+        
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="toprope, rock climbing, climbing routes, climbing guidebook" />
+
+@if (ViewBag.Description != null)
+{
+<meta property="og:description" content="@ViewBag.Description" />
+<meta name="description" content="@ViewBag.Description" />
+}
+else
+{
+<meta name="description" content="Toprope is an easy-to-use, beautiful online guidebook for rock climbers from all around the world." />
+}
+
+<meta property="og:url" content="@string.Format("{0}://{1}/{2}", Request.Url.Scheme, Request.Url.Host, Url.Current().ToString().TrimStart('/'))" />
+
+<link rel="icon" type="image/ico" href="@Url.Content("~/favicon.ico")" />
+<link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" />
+
+@Styles.Render("~/css")

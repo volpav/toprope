@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMinimal.cshtml"; 
+}
+
+<div id="search-box">
+    <div id="logo">
+        <a href="/">top<span>rope</span></a>
+    </div>
+    <p>@Html.Raw(string.Format(Toprope.Resources.Frontend.BestOnlineGuidebook, Url.Action("Index", "About"), Toprope.Resources.Frontend.AboutToprope))</p>
+    <form method="get" action="@Url.Action("Index", "Home")">
+        <div class="input-box-container">
+            <input type="text" name="q" autofocus="true" autocomplete="off" spellcheck="false" 
+                value="@Html.AttributeEncode(Request["q"] ?? string.Empty)" />
+
+            <a title="@Toprope.Resources.Frontend.HowToSearch" href="@Url.Action("Search", "About")">@Toprope.Resources.Frontend.Help</a>
+        </div>
+        <input type="submit" class="button button-red" value="@Toprope.Resources.Frontend.FindRoutes" />
+    </form>
+</div>

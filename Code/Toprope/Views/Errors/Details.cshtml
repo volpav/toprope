@@ -1,0 +1,17 @@
+﻿@model Toprope.Models.ErrorViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@((int)Model.Code) - Toprope</title>
+        <meta name="robots" content="noindex, nofollow" />
+    </head>
+    <body>
+        <p>@(Model.Code == HttpStatusCode.NotFound ? Toprope.Resources.Frontend.Error_404 : Toprope.Resources.Frontend.AnErrorOccured)</p>
+    </body>
+</html>

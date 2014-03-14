@@ -1,0 +1,22 @@
+﻿@model Toprope.Models.Search.SearchResultGroup
+
+<h2>@(!string.IsNullOrEmpty(Model.Name) ? Model.Name : Toprope.Resources.Frontend.SearchResults) (@Toprope.Infrastructure.Utilities.Input.FormatNumber(Model.Total))</h2>
+
+<ul class="search-results-list">
+@for (int i = 0; i < Model.Results.Count; i++)
+{
+    <li class="clear@(string.IsNullOrEmpty(Model.Results[i].Excerpt) ? " no-excerpt" : null)">
+        <label class="search-result-order">@(Toprope.Infrastructure.Utilities.Input.FormatNumber(i + 1)).</label>
+        <div class="search-result-outer">
+            @{Html.RenderPartial("_SearchItem", Model.Results[i]);}
+        </div>
+    </li>
+}
+
+@if (Model.Total > Model.Results.Count)
+{
+    <li class="clear no-excerpt">
+        <a class="tag" href="@Model.Url(Url)">@Toprope.Resources.Frontend.MoreResults&nbsp;&rarr;</a>
+    </li>
+}
+</ul>

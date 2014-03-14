@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutSearch" xml:space="preserve">
+    <value>About the search</value>
+  </data>
+  <data name="AboutSearch_Body" xml:space="preserve">
+    <value>Toprope supports plain search queries as well as advanced (parametrized) ones. For example, the query &lt;span class="code"&gt;hard route&lt;/span&gt; will return all areas, sectors and routes containing the phrase "hard route". On the other hand, the query &lt;span class="code"&gt;grade:5.11c-* love&lt;/span&gt; will return all routes harder than 5.11b with the word "love" in the text.</value>
+  </data>
+  <data name="AboutSearch_Body2" xml:space="preserve">
+    <value>These are parameter we currently support:</value>
+  </data>
+  <data name="AboutTheAuthor" xml:space="preserve">
+    <value>About the author</value>
+  </data>
+  <data name="AboutToprope" xml:space="preserve">
+    <value>About Toprope</value>
+  </data>
+  <data name="AboutToprope_Body" xml:space="preserve">
+    <value>Toprope is an easy to use online guidebook for rock climbers. It contains information about climbing areas, sectors and routes from all over the globe. </value>
+  </data>
+  <data name="AboutToprope_Body2" xml:space="preserve">
+    <value>Some of the advantages of using Toprope:</value>
+  </data>
+  <data name="AboutToprope_Body3" xml:space="preserve">
+    <value>Toprope was built by &lt;a href="http://volgarev.me" target="_blank"&gt;Pavel Volgarev&lt;/a&gt;, a professional web developer and rock climber with more than 7 years of experience in both areas. If you'd like to get in touch, please send me an email to &lt;a href="mailto:volpav+toprope@gmail.com"&gt;volpav@gmail.com&lt;/a&gt; and I'll reply as soon as I can.</value>
+  </data>
+  <data name="AdvancedStuff" xml:space="preserve">
+    <value>Advanced stuff</value>
+  </data>
+  <data name="AdvancedStuff_Body" xml:space="preserve">
+    <value>Search queries are case insensitive, meaning that &lt;span class="code"&gt;Hello World&lt;/span&gt; and &lt;span class="code"&gt;hello world&lt;/span&gt; will return the same results.</value>
+  </data>
+  <data name="AdvancedStuff_Body2" xml:space="preserve">
+    <value>If the parameter value contains spaces, enclose it into double quotes. For example, the query &lt;span class="code"&gt;name:"Route name"&lt;/span&gt; will return items with names containing the phrase "Route name" whereas the query &lt;span class="code"&gt;name:Route name&lt;/span&gt; will return items with names containing the word "Route" and having the word "name" in names, descriptions or tags.</value>
+  </data>
+  <data name="AdvancedStuff_Body3" xml:space="preserve">
+    <value>Parameters can accept multiple values specified at once. The values in this case must be separated with the comma. For example, the query &lt;span class="code"&gt;tags:spain,hard-climbing&lt;/span&gt; will return all items with tags "spain" or "hard-climbing". This technique doesn't apply when you enclose the parameter value into double quotes (in this case commas are treated as part of the phrase).  </value>
+  </data>
+  <data name="AdvancedStuff_Body4" xml:space="preserve">
+    <value>Some parameter allow specifying a range of values. Range bounds are separated with the dash character. If you want to ommit either a lower bound of an upper bound, specify asterisk instead of a value. For example, the query &lt;span class="code"&gt;grade:5.11a-5.12a&lt;/span&gt; will return all routes that are rated from 5.11a to 5.12a whereas the query &lt;span class="code"&gt;grade:*-5.13a&lt;/span&gt; will return all routes no harder than 5.13a.</value>
+  </data>
+  <data name="AnErrorOccured" xml:space="preserve">
+    <value>An error occured while processing your request. Sorry about that.</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="Areas" xml:space="preserve">
+    <value>Areas</value>
+  </data>
+  <data name="Area_Arco" xml:space="preserve">
+    <value>Arco</value>
+  </data>
+  <data name="Area_Ekne" xml:space="preserve">
+    <value>Ekne</value>
+  </data>
+  <data name="Area_Fontainebleau" xml:space="preserve">
+    <value>Fontainebleau</value>
+  </data>
+  <data name="Area_Frankenjura" xml:space="preserve">
+    <value>Frankenjura</value>
+  </data>
+  <data name="Area_JoshuaTreeNationalPark" xml:space="preserve">
+    <value>Joshua Tree National Park</value>
+  </data>
+  <data name="Area_KhaoJeenLair" xml:space="preserve">
+    <value>Khao Jeen Lair</value>
+  </data>
+  <data name="Area_KualaLumpur" xml:space="preserve">
+    <value>Kuala Lumpur</value>
+  </data>
+  <data name="Area_Kullaberg" xml:space="preserve">
+    <value>Kullaberg</value>
+  </data>
+  <data name="Area_Sardinia" xml:space="preserve">
+    <value>Sardinia</value>
+  </data>
+  <data name="Area_Siurana" xml:space="preserve">
+    <value>Siurana</value>
+  </data>
+  <data name="Area_Tirol" xml:space="preserve">
+    <value>Tirol</value>
+  </data>
+  <data name="Area_Yangshuo" xml:space="preserve">
+    <value>Yangshuo</value>
+  </data>
+  <data name="Area_YosemiteNationalPark" xml:space="preserve">
+    <value>Yosemite National Park</value>
+  </data>
+  <data name="AvailableParameters" xml:space="preserve">
+    <value>Available parameters</value>
+  </data>
+  <data name="AvailableParameters_Description" xml:space="preserve">
+    <value>Here's a list of all available search parameters:</value>
+  </data>
+  <data name="BestOnlineGuidebook" xml:space="preserve">
+    <value>A &lt;a href="{0}" title="{1}"&gt;better&lt;/a&gt; online guidebook for rock climbers.</value>
+  </data>
+  <data name="Casing" xml:space="preserve">
+    <value>Character casing</value>
+  </data>
+  <data name="Climbing" xml:space="preserve">
+    <value>Climbing</value>
+  </data>
+  <data name="ContentFirst" xml:space="preserve">
+    <value>Content is the king</value>
+  </data>
+  <data name="ContentFirst_Body" xml:space="preserve">
+    <value>Toprope reduces the amount of unnecessary and distracting chrome that stands between you and the actual content making it extremely easy to use the website.</value>
+  </data>
+  <data name="ContentProvidedBy" xml:space="preserve">
+    <value>Content provided by {0}.</value>
+  </data>
+  <data name="Coordinates" xml:space="preserve">
+    <value>lat,lng</value>
+  </data>
+  <data name="Country_Argentina" xml:space="preserve">
+    <value>Argentina</value>
+  </data>
+  <data name="Country_Austria" xml:space="preserve">
+    <value>Austria</value>
+  </data>
+  <data name="Country_Canada" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="Country_England" xml:space="preserve">
+    <value>England</value>
+  </data>
+  <data name="Country_France" xml:space="preserve">
+    <value>France</value>
+  </data>
+  <data name="Country_Germany" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="Country_Italy" xml:space="preserve">
+    <value>Italy</value>
+  </data>
+  <data name="Country_Mexico" xml:space="preserve">
+    <value>Mexico</value>
+  </data>
+  <data name="Country_Spain" xml:space="preserve">
+    <value>Spain</value>
+  </data>
+  <data name="Country_Switzerland" xml:space="preserve">
+    <value>Switzerland</value>
+  </data>
+  <data name="Country_Turkey" xml:space="preserve">
+    <value>Turkey</value>
+  </data>
+  <data name="Country_UnitedStates" xml:space="preserve">
+    <value>United States</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Difficulty" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="Discover" xml:space="preserve">
+    <value>Discover</value>
+  </data>
+  <data name="Discover_MostPopularAreas" xml:space="preserve">
+    <value>Most popular areas</value>
+  </data>
+  <data name="Discover_MostPopularCountries" xml:space="preserve">
+    <value>Most popular countries</value>
+  </data>
+  <data name="Easy" xml:space="preserve">
+    <value>easy</value>
+  </data>
+  <data name="Error_404" xml:space="preserve">
+    <value>Page not found.</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="FindRoutes" xml:space="preserve">
+    <value>Find routes</value>
+  </data>
+  <data name="GPS" xml:space="preserve">
+    <value>GPS</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>grade</value>
+  </data>
+  <data name="GradesFrench" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="GradesYDS" xml:space="preserve">
+    <value>YDS</value>
+  </data>
+  <data name="Hard" xml:space="preserve">
+    <value>hard</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="HowToSearch" xml:space="preserve">
+    <value>How to use search</value>
+  </data>
+  <data name="Lists" xml:space="preserve">
+    <value>Multiple values</value>
+  </data>
+  <data name="MobileFriendly" xml:space="preserve">
+    <value>Mobile friendly</value>
+  </data>
+  <data name="MobileFriendly_Body" xml:space="preserve">
+    <value>Toprope uses a &lt;i&gt;responsive design&lt;/i&gt; meaning that the website looks great on any device with any screen resolution. Leave your paper guidebooks at home and use Toprope on the go! </value>
+  </data>
+  <data name="Moderate" xml:space="preserve">
+    <value>moderate</value>
+  </data>
+  <data name="MoreResults" xml:space="preserve">
+    <value>More like these</value>
+  </data>
+  <data name="NarrowDown" xml:space="preserve">
+    <value>You can narrow down results by only searching for &lt;a href="{0}"&gt;areas&lt;/a&gt;, &lt;a href="{1}"&gt;sectors&lt;/a&gt; or &lt;a href="{2}"&gt;routes&lt;/a&gt;</value>
+  </data>
+  <data name="NextPage" xml:space="preserve">
+    <value>Next page</value>
+  </data>
+  <data name="NoDescription" xml:space="preserve">
+    <value>No description</value>
+  </data>
+  <data name="NoName" xml:space="preserve">
+    <value>No name</value>
+  </data>
+  <data name="NoRelatedAreasFound" xml:space="preserve">
+    <value>No related areas found</value>
+  </data>
+  <data name="NoRelatedSectorsFound" xml:space="preserve">
+    <value>No related sectors found</value>
+  </data>
+  <data name="NoRoutesFound" xml:space="preserve">
+    <value>No routes found</value>
+  </data>
+  <data name="NothingFound" xml:space="preserve">
+    <value>Nothing found.</value>
+  </data>
+  <data name="OfflineSupport" xml:space="preserve">
+    <value>Offline support</value>
+  </data>
+  <data name="OfflineSupport_Body" xml:space="preserve">
+    <value>Every page that you visit on Toprope automatically becomes available when you don't have Internet access. This can be extremely useful for those who tend to turn off their mobile data connection when going abroad.</value>
+  </data>
+  <data name="Parameter_Area" xml:space="preserve">
+    <value>Searches inside area name, description and tags.</value>
+  </data>
+  <data name="Parameter_Climbing" xml:space="preserve">
+    <value>Searches for a given type of climbing. Allowed values are "sport" and "trad".</value>
+  </data>
+  <data name="Parameter_Description" xml:space="preserve">
+    <value>Searches inside the description. For example, &lt;span class="code"&gt;description:easy&lt;/span&gt; will only include items with the word "easy" in their descriptions.</value>
+  </data>
+  <data name="Parameter_Grade" xml:space="preserve">
+    <value>Searches for routes with the given grade. For example, &lt;span class="code"&gt;grade:5.13a&lt;/span&gt; will only include routes rated 5.13a (7c+).</value>
+  </data>
+  <data name="Parameter_In" xml:space="preserve">
+    <value>Restricts the search to a given result type. Allowed values are "areas", "sectors" and "routes".</value>
+  </data>
+  <data name="Parameter_Location" xml:space="preserve">
+    <value>Searches within 10 kilometers from the given geographical point. For example, &lt;span class="code"&gt;location:-34.149,18.927&lt;/span&gt; will only include items that are within 10 kilometers from -34.149 (latitude) and 18.927 (longitude).</value>
+  </data>
+  <data name="Parameter_Name" xml:space="preserve">
+    <value>Searches inside the name. For example, &lt;span class="code"&gt;name:cool&lt;/span&gt; will only include items with the word "cool" in their names.</value>
+  </data>
+  <data name="Parameter_Route" xml:space="preserve">
+    <value>Searches inside route name and description.</value>
+  </data>
+  <data name="Parameter_Season" xml:space="preserve">
+    <value>Searches for the given climbing season. Allowed values are "autumn", "winter", "spring" and "summer".</value>
+  </data>
+  <data name="Parameter_Sector" xml:space="preserve">
+    <value>Searches inside sector name, description and tags.</value>
+  </data>
+  <data name="Parameter_Tags" xml:space="preserve">
+    <value>Searches inside the tags. For example, &lt;span class="code"&gt;tags:spain&lt;/span&gt; will only include items with the tag "span".</value>
+  </data>
+  <data name="Permalink" xml:space="preserve">
+    <value>Permalink</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="PowerfulSearch" xml:space="preserve">
+    <value>Powerful search</value>
+  </data>
+  <data name="PowerfulSearch_Body" xml:space="preserve">
+    <value>The &lt;a href="{0}"&gt;powerful search&lt;/a&gt; allows you to quickly find what you're looking for. No more clicking around and browsing the endless number of categories. It's all at your fingertips! </value>
+  </data>
+  <data name="PreviousPage" xml:space="preserve">
+    <value>Previous page</value>
+  </data>
+  <data name="Ranges" xml:space="preserve">
+    <value>Range queries</value>
+  </data>
+  <data name="Related" xml:space="preserve">
+    <value>Related</value>
+  </data>
+  <data name="RelatedAreas" xml:space="preserve">
+    <value>Related areas</value>
+  </data>
+  <data name="RouteDirectory_Description" xml:space="preserve">
+    <value>To quickly get started, visit the &lt;a href="{0}"&gt;route directory&lt;/a&gt;.</value>
+  </data>
+  <data name="Routes" xml:space="preserve">
+    <value>Routes</value>
+  </data>
+  <data name="RoutesTotal" xml:space="preserve">
+    <value>routes total</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchResults" xml:space="preserve">
+    <value>Search results</value>
+  </data>
+  <data name="Season" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="Seasons" xml:space="preserve">
+    <value>Seasons</value>
+  </data>
+  <data name="Sector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="Sectors" xml:space="preserve">
+    <value>Sectors</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send feedback</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="Term" xml:space="preserve">
+    <value>Term</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>total</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Unnamed" xml:space="preserve">
+    <value>unnamed</value>
+  </data>
+  <data name="Unrated" xml:space="preserve">
+    <value>unrated</value>
+  </data>
+  <data name="WelcomeToToprope" xml:space="preserve">
+    <value>Welcome to Toprope, an online guidebook for rock climbers</value>
+  </data>
+  <data name="WhyToprope" xml:space="preserve">
+    <value>Why Toprope?</value>
+  </data>
+  <data name="WordsAndPhrases" xml:space="preserve">
+    <value>Words and phrases</value>
+  </data>
+  <data name="YourFeedbackHasBeenSent" xml:space="preserve">
+    <value>Your feedback has been sent.</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>Help us improve this page</value>
+  </data>
+  <data name="Discover_NowSearching" xml:space="preserve">
+    <value>Now searching</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="SearchTips" xml:space="preserve">
+    <value>Search tips</value>
+  </data>
+  <data name="GradesEwbank" xml:space="preserve">
+    <value>Ewbank</value>
+  </data>
+  <data name="RouteGrades" xml:space="preserve">
+    <value>Route grades</value>
+  </data>
+</root>

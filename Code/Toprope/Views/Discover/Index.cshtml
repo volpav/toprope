@@ -1,0 +1,43 @@
+﻿@model Toprope.Models.RouteDiscoveryModel
+
+@{
+    ViewBag.Title = Toprope.Resources.Frontend.Discover;
+    ViewBag.DisableCaching = true;
+}
+
+<div id="content" class="discover">
+    <div class="outer">
+        <span class="tag" id="total-routes">@Toprope.Infrastructure.Utilities.Input.FormatNumber(Model.TotalRoutes)&nbsp;@Toprope.Resources.Frontend.RoutesTotal</span>
+        <section>
+            <h2>@Toprope.Resources.Frontend.Discover_MostPopularCountries</h2>
+            <ul class="clear">
+                @foreach (var i in Model.Countries)
+                {
+                    <li><a class="tag" href="@Url.Action("Index", "Home", new { q = i.SearchQuery })">@i.Name</a></li>
+                }
+            </ul>
+        </section>
+        <section>
+            <h2>@Toprope.Resources.Frontend.Discover_MostPopularAreas</h2>
+            <ul class="clear">
+                @foreach (var i in Model.Areas)
+                {
+                    <li><a class="tag" href="@Url.Action("Index", "Home", new { q = i.SearchQuery })">@i.Name</a></li>
+                }
+            </ul>
+        </section>
+
+        @if (Model.NowSearching.Any())
+        {
+            <section>
+            <h2>@Toprope.Resources.Frontend.Discover_NowSearching</h2>
+            <ul class="clear">
+                @foreach (var i in Model.NowSearching)
+                {
+                    <li><a class="tag" href="@Url.Action("Index", "Home", new { q = i.SearchQuery })">@i.Name</a></li>
+                }
+            </ul>
+            </section>
+        }
+    </div>
+</div>

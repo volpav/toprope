@@ -1,0 +1,9 @@
+﻿@model Toprope.Models.Search.SearchResultContainer
+
+@foreach (var group in Model.Results.OfType<Toprope.Models.Search.SearchResultGroup>())
+{
+    if (group.Total > 0)
+    {
+        Html.RenderPartial("_SearchGroup", group);
+    }
+}

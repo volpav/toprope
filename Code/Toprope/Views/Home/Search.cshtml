@@ -1,0 +1,35 @@
+﻿@model Toprope.Models.Search.SearchResultsViewModel
+@{
+    ViewBag.Title = Model.Query.ToString();
+    ViewBag.BodyCss = "search";
+    ViewBag.HideMenu = true;
+}
+
+@section toolbar {
+<div id="search-box-mini">
+    <form method="get" action="@Url.Action("Index", "Home")">
+        <div class="input-box-container">
+            <input type="text" name="q" autocomplete="off" spellcheck="false" 
+                value="@Model.Query.ToString()" />
+
+            <a title="@Toprope.Resources.Frontend.HowToSearch" href="@Url.Action("Search", "About")">@Toprope.Resources.Frontend.Help</a>
+        </div>
+
+        <input type="submit" class="button button-red" value="@Toprope.Resources.Frontend.FindRoutes" />
+    </form>
+    <div class="clear"></div>
+</div>
+}
+
+<section class="search-results">
+    @if (Model.InnerViewModel.Total > 0)
+    {
+        if (!string.IsNullOrEmpty(Model.Hint))
+        {
+            <div class="search-hint hint">@Html.Raw(Model.Hint)</div>
+        }
+    
+    <div class="search-resultscount"><span class="tag">@Toprope.Infrastructure.Utilities.Input.FormatNumber(Model.InnerViewModel.Total)&nbsp;@Toprope.Resources.Frontend.Total</span></div>
+    }
+    @{Html.RenderPartial(Model.InnerView, Model.InnerViewModel);}
+</section>

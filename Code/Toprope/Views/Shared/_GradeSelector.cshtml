@@ -1,0 +1,18 @@
+﻿@using Toprope.Infrastructure;
+
+@{
+    var grade = Toprope.Infrastructure.Application.Current.Session.RegionalSettings.Grades;
+}
+<ul class="grade-selector">
+    <li>
+        <a title="@Toprope.Resources.Frontend.RouteGrades" class="tagish @(grade == Toprope.Models.RouteGradeSystem.YDS ? "tag" : null)" href="@Url.Current(new { grades = "yds" })">@Toprope.Resources.Frontend.GradesYDS</a>
+    </li>
+    <li class="separator"></li>
+    <li>
+        <a title="@Toprope.Resources.Frontend.RouteGrades" class="tagish @(grade == Toprope.Models.RouteGradeSystem.French ? "tag" : null)" href="@Url.Current(new { grades = "french" })">@Toprope.Resources.Frontend.GradesFrench</a>
+    </li>
+    <li class="separator"></li>
+    <li>
+        <a title="@Toprope.Resources.Frontend.RouteGrades" class="tagish @(grade == Toprope.Models.RouteGradeSystem.Ewbank ? "tag" : null)" href="@Url.Current(new { grades = "ewbank" })">@Toprope.Resources.Frontend.GradesEwbank</a>
+    </li>
+</ul>
